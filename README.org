@@ -1,0 +1,16 @@
+http://verisimilitudes.net/2018-04-04
+
+The ACUTE-TERMINAL-CONTROL library was created  to serve my needs when
+writing an  interactive program that  creates a more  complex terminal
+interface. In order to clean  the source of the aforementioned program
+a tad,  I decided to  split the functionality  into a library.  I also
+have a large  disgust with the use of Curses  varieties in Common Lisp
+programs, as  this unnecessarily  and substantially  complicates using
+such a program. Risking memory leaks shouldn't be necessary to control
+a terminal. This  library is named as  if an illness, but  can also be
+read as fast control of a terminal device.
+
+This library is  licensed under the GNU Affero  General Public License
+version three.
+
+This library uses the CL-ECMA-48 library to generate its controlling sequences and so currently only targets terminals supporting the ECMA-48 control functions used. This library primarily acts as an abstraction over CL-ECMA-48. While this ensures that the control functions are optimized, as CL-ECMA-48 performs this optimization, it is not possible at this level of abstraction to necessarily send the absolutely optimal combination of control functions; this will be elaborated upon later.
